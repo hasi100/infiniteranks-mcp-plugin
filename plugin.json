@@ -1,0 +1,102 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "infiniteranks",
+  "version": "1.0.0",
+  "description": "Read saved AI search visibility evidence for your brand workspace.",
+  "author": {
+    "name": "InfiniteRanks",
+    "email": "hello@infiniteranks.com",
+    "url": "https://www.infiniteranks.com"
+  },
+  "homepage": "https://www.infiniteranks.com",
+  "keywords": ["AI visibility", "AI search", "brand monitoring", "citations", "analytics"],
+  "logo": "assets/infiniteranks.svg",
+  "skills": ["skills/get-started"],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "InfiniteRanks",
+        "shortDescription": "Read AI visibility evidence",
+        "longDescription": "Connect your InfiniteRanks workspace to explore saved AI answers, brand mentions, citations, competitor comparisons, and visibility trends across ChatGPT, Claude, Gemini, Perplexity, and Google AI Overviews. Every result comes from collected workspace evidence. The connector is read-only: it cannot create or edit prompts, add competitors, start a collection, run tracking, modify records, or spend credits.",
+        "developerName": "InfiniteRanks",
+        "category": "Productivity",
+        "capabilities": [
+          "Read brand visibility summaries",
+          "Search saved AI answers and citations",
+          "Explore tracked prompts and competitors",
+          "Review cited domains and saved actions"
+        ],
+        "websiteURL": "https://www.infiniteranks.com",
+        "supportURL": "https://www.infiniteranks.com/contact",
+        "privacyPolicyURL": "https://www.infiniteranks.com/privacy",
+        "termsOfServiceURL": "https://www.infiniteranks.com/terms",
+        "defaultPrompt": [
+          "Summarize our brand visibility and the strongest cited sources in this workspace.",
+          "Find saved AI answers that mention our brand and show their citations.",
+          "Compare our brand with tracked competitors using saved answers."
+        ],
+        "brandColor": "#2B64FD",
+        "composerIcon": "./assets/infiniteranks.svg",
+        "logo": "./assets/infiniteranks.svg"
+      },
+      "onboardingSkill": "./skills/get-started/SKILL.md",
+      "review": {
+        "test_cases": {
+          "positive": [
+            {
+              "description": "Read workspace identity and tracked brands",
+              "prompt": "Which brand and market does my connected InfiniteRanks workspace track?",
+              "tools_triggered": "workspace_get",
+              "expected_behavior": "Return the selected workspace name, market, language, and tracked brand names and domains without exposing unrelated workspaces."
+            },
+            {
+              "description": "Summarize saved visibility evidence",
+              "prompt": "Summarize my brand's visibility, position, sentiment, and platform differences for the last 30 days.",
+              "tools_triggered": "visibility_summary",
+              "expected_behavior": "Calculate the summary from saved eligible answers only and distinguish missing evidence from zero visibility."
+            },
+            {
+              "description": "Find saved answers mentioning the brand",
+              "prompt": "Find recent saved AI answers that mention my brand and show their citations.",
+              "tools_triggered": "chats_search",
+              "expected_behavior": "Return matching saved answers, platform, prompt, excerpts, and source URLs without initiating new collection."
+            },
+            {
+              "description": "Review top cited sources",
+              "prompt": "Which domains are cited most often in the last 30 days, and how often do those answers mention my brand?",
+              "tools_triggered": "top_sources",
+              "expected_behavior": "Rank cited domains from saved evidence and report citation counts and brand-mention context."
+            },
+            {
+              "description": "Open results for a saved prompt",
+              "prompt": "Show the latest platform results for one of my tracked prompts.",
+              "tools_triggered": "prompts_list, prompt_get",
+              "expected_behavior": "Find an existing prompt ID, then return its saved results; do not create or run a prompt."
+            }
+          ],
+          "negative": [
+            {
+              "description": "Do not start collection for a new question",
+              "prompt": "Track this new question now: which AI visibility tool is best for my company?",
+              "tools_triggered": "prompts_list",
+              "expected_behavior": "Explain that the connector cannot add or track prompts; it may only list saved prompts."
+            },
+            {
+              "description": "Reject unknown prompt identifiers cleanly",
+              "prompt": "Get results for prompt ID does-not-exist.",
+              "tools_triggered": "prompt_get",
+              "expected_behavior": "Return a not-found or validation response without exposing another workspace's prompt data."
+            },
+            {
+              "description": "Do not change competitors or actions",
+              "prompt": "Add a competitor and mark every open action complete.",
+              "tools_triggered": "competitors_list, actions_list",
+              "expected_behavior": "Explain that the connector only reads competitors and actions; it cannot add competitors or update action status."
+            }
+          ]
+        },
+        "commerce": false
+      }
+    }
+  }
+}
