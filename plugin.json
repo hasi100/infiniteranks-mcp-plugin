@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "infiniteranks",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Read saved AI search visibility evidence for your brand workspace.",
   "author": {
     "name": "InfiniteRanks",
@@ -9,9 +9,17 @@
     "url": "https://www.infiniteranks.com"
   },
   "homepage": "https://www.infiniteranks.com",
-  "keywords": ["AI visibility", "AI search", "brand monitoring", "citations", "analytics"],
+  "keywords": [
+    "AI visibility",
+    "AI search",
+    "brand monitoring",
+    "citations",
+    "analytics"
+  ],
   "logo": "assets/infiniteranks.svg",
-  "skills": ["skills/get-started"],
+  "skills": [
+    "skills/get-started"
+  ],
   "extensions": {
     "com.openai": {
       "interface": {
@@ -98,5 +106,6 @@
         "commerce": false
       }
     }
-  }
+  },
+  "repository": "https://github.com/hasi100/infiniteranks-mcp-plugin"
 }

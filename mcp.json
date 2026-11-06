@@ -3,7 +3,18 @@
   "mcpServers": {
     "infiniteranks": {
       "type": "streamable-http",
-      "url": "https://app.infiniteranks.com/mcp"
+      "url": "https://app.infiniteranks.com/mcp",
+      "extensions": {
+        "com.openai": {
+          "auth": {
+            "type": "oauth",
+            "client": {
+              "mode": "cimd"
+            },
+            "baseScopes": ["mcp:read"]
+          }
+        }
+      }
     }
   }
 }
