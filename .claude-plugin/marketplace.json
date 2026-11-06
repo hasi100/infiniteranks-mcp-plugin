@@ -1,7 +1,17 @@
 {
   "name": "infiniteranks",
-  "owner": {"name": "InfiniteRanks", "email": "hello@infiniteranks.com"},
+  "owner": {
+    "name": "InfiniteRanks",
+    "email": "hello@infiniteranks.com"
+  },
   "plugins": [
-    {"name": "infiniteranks", "source": "./", "description": "Read saved AI search visibility evidence for your brand workspace."}
-  ]
+    {
+      "name": "infiniteranks",
+      "source": "./",
+      "description": "Read saved AI search visibility evidence for your brand workspace."
+    }
+  ],
+  "metadata": {
+    "description": "Official InfiniteRanks plugin: read-only AI search visibility evidence over MCP."
+  }
 }
