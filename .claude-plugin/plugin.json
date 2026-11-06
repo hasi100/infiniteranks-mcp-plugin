@@ -1,0 +1,21 @@
+{
+  "name": "infiniteranks",
+  "version": "1.0.1",
+  "description": "Read saved AI search visibility evidence for your brand workspace.",
+  "author": {
+    "name": "InfiniteRanks",
+    "email": "hello@infiniteranks.com",
+    "url": "https://www.infiniteranks.com"
+  },
+  "homepage": "https://www.infiniteranks.com",
+  "repository": "https://github.com/hasi100/infiniteranks-mcp-plugin",
+  "license": "MIT",
+  "keywords": [
+    "infiniteranks",
+    "ai-visibility",
+    "ai-search",
+    "brand-monitoring",
+    "citations",
+    "mcp"
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "name": "infiniteranks",
+  "version": "1.0.1",
+  "description": "Read saved AI search visibility evidence for your brand workspace.",
+  "author": {
+    "name": "InfiniteRanks",
+    "email": "hello@infiniteranks.com",
+    "url": "https://www.infiniteranks.com"
+  },
+  "homepage": "https://www.infiniteranks.com",
+  "repository": "https://github.com/hasi100/infiniteranks-mcp-plugin",
+  "license": "MIT",
+  "keywords": [
+    "infiniteranks",
+    "ai-visibility",
+    "ai-search",
+    "brand-monitoring",
+    "citations",
+    "mcp"
+  ],
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "InfiniteRanks",
+    "shortDescription": "Read AI visibility evidence",
+    "longDescription": "Connect your InfiniteRanks workspace to explore saved AI answers, brand mentions, citations, competitor comparisons, and visibility trends across ChatGPT, Claude, Gemini, Perplexity, and Google AI Overviews. Every result comes from collected workspace evidence. The connector is read-only: it cannot create or edit prompts, add competitors, start a collection, run tracking, modify records, or spend credits.",
+    "developerName": "InfiniteRanks",
+    "category": "Productivity",
+    "capabilities": [
+      "Read"
+    ],
+    "websiteURL": "https://www.infiniteranks.com",
+    "supportURL": "https://www.infiniteranks.com/contact",
+    "privacyPolicyURL": "https://www.infiniteranks.com/privacy",
+    "termsOfServiceURL": "https://www.infiniteranks.com/terms",
+    "defaultPrompt": [
+      "Summarize our brand visibility and the strongest cited sources in this workspace.",
+      "Find saved AI answers that mention our brand and show their citations.",
+      "Compare our brand with tracked competitors using saved answers."
+    ],
+    "brandColor": "#2B64FD",
+    "composerIcon": "./assets/infiniteranks.svg",
+    "logo": "./assets/infiniteranks.svg"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "infiniteranks",
+  "owner": {"name": "InfiniteRanks", "email": "hello@infiniteranks.com"},
+  "plugins": [
+    {"name": "infiniteranks", "source": "./", "description": "Read saved AI search visibility evidence for your brand workspace."}
+  ]
+}

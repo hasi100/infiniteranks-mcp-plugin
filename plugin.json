@@ -107,5 +107,6 @@
       }
     }
   },
-  "repository": "https://github.com/hasi100/infiniteranks-mcp-plugin"
+  "repository": "https://github.com/hasi100/infiniteranks-mcp-plugin",
+  "license": "MIT"
 }

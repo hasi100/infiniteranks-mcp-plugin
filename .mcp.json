@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "infiniteranks": {
+      "type": "http",
+      "url": "https://app.infiniteranks.com/mcp",
+      "oauth_resource": "https://app.infiniteranks.com/mcp"
+    }
+  }
+}
