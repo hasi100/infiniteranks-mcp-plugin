@@ -9,9 +9,11 @@
           "auth": {
             "type": "oauth",
             "client": {
-              "mode": "cimd"
+              "mode": "dcr"
             },
-            "baseScopes": ["mcp:read"]
+            "baseScopes": [
+              "mcp:read"
+            ]
           }
         }
       }
